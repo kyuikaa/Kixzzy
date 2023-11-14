@@ -1,72 +1,58 @@
 @file:Suppress("UnstableApiUsage")
 
-import com.android.build.api.dsl.ApplicationDefaultConfig
-
 plugins {
-    id("com.android.application")
-    kotlin("android")
-    id("dagger.hilt.android.plugin")
-    kotlin("kapt")
+    id("kizzy.android.application")
+    id("kizzy.android.application.compose")
+    id("kizzy.android.hilt")
 }
 
 android {
     namespace = "com.my.kizzy"
 
-    compileSdk = AppConfig.compileSdk
     defaultConfig {
         applicationId = "com.my.kizzy"
-        minSdk = AppConfig.minSdk
-        targetSdk = AppConfig.targetSdk
-        versionCode = AppConfig.versionCode
-        versionName = AppConfig.versionName
+        targetSdk = 33
+        versionCode = libs.versions.version.code.get().toInt()
+        versionName = libs.versions.version.name.get()
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
-        buildConfigFieldFromGradleProperty("BASE_URL","BASE_URL")
     }
-
     buildTypes {
-        getByName("release") {
-            isMinifyEnabled = true
+        release {
             isShrinkResources = true
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.0"
-    }
-    packagingOptions {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
 
+    packagingOptions.resources.excludes.add("/META-INF/{AL2.0,LGPL2.1}")
 }
 dependencies {
-    implementation(project(":color"))
-    implementation(project(":gateway"))
-    debugImplementation("androidx.compose.ui:ui-tooling:${Versions.compose_version}")
-    implementation(AppDependencies.AppLibraries)
-    kapt(AppDependencies.HiltCompiler)
-}
+    implementation (projects.domain)
+    implementation (projects.theme)
+    implementation (projects.featureStartup)
+    implementation (projects.featureCrashHandler)
+    implementation (projects.featureProfile)
+    implementation (projects.featureAbout)
+    implementation (projects.featureSettings)
+    implementation (projects.featureLogs)
+    implementation (projects.featureRpcBase)
+    implementation (projects.featureAppsRpc)
+    implementation (projects.featureMediaRpc)
+    implementation (projects.featureConsoleRpc)
+    implementation (projects.featureCustomRpc)
+    implementation (projects.featureHome)
+    implementation (projects.common.preference)
+    implementation (projects.common.navigation)
 
-fun ApplicationDefaultConfig.buildConfigFieldFromGradleProperty(fieldName: String,gradlePropertyName: String) {
-    val propertyValue = project.properties[gradlePropertyName] as? String
-    checkNotNull(propertyValue) { "Gradle property $gradlePropertyName is null" }
+    // Extras
+    implementation (libs.app.compat)
+    implementation (libs.accompanist.navigation.animation)
+    implementation (libs.kotlinx.serialization.json)
 
-    buildConfigField("String", fieldName, propertyValue)
+
+    // Material
+    implementation (libs.material3)
+    implementation (libs.androidx.material)
+    implementation (libs.material3.windows.size)
 }
