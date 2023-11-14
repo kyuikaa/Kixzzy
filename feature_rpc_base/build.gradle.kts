@@ -12,4 +12,8 @@ dependencies {
     implementation (libs.blankj.utilcodex)
     implementation(libs.androidx.material)
     implementation(libs.kotlinx.serialization.json)
+<<<<<<< HEAD
+=======
+    implementation(libs.glide)
+>>>>>>> dev
 }

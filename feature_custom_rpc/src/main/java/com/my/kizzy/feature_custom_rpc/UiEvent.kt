@@ -11,8 +11,9 @@
  */
 
 package com.my.kizzy.feature_custom_rpc
-import android.net.Uri
-import com.my.kizzy.domain.model.RpcConfig
+
+import com.my.kizzy.domain.model.rpc.RpcConfig
+import java.io.File
 
 sealed interface UiEvent {
     object TriggerBottomSheet: UiEvent
@@ -20,10 +21,11 @@ sealed interface UiEvent {
     class SetFieldsFromConfig(val config: RpcConfig): UiEvent
     object TriggerStartTimeStampsDialog: UiEvent
     object TriggerStopTimeStampsDialog: UiEvent
-    class UploadImage(val uri: Uri,val callback: (result: String) -> Unit): UiEvent
+    class UploadImage(val file: File,val callback: (result: String) -> Unit): UiEvent
 
     sealed interface SheetEvent: UiEvent {
         object TriggerLoadDialog: SheetEvent
+        object TriggerShareDialog: SheetEvent
         object TriggerSaveDialog: SheetEvent
         object TriggerDeleteDialog: SheetEvent
         object TriggerPreviewDialog: SheetEvent

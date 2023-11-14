@@ -10,7 +10,7 @@
  *
  */
 
-package com.my.kizzy.domain.model
+package com.my.kizzy.domain.model.user
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -44,7 +44,13 @@ data class User(
     @SerialName("special")
     val special: String? = null,
     @SerialName("verified")
+<<<<<<< HEAD:domain/src/main/java/com/my/kizzy/domain/model/User.kt
     val verified: Boolean = false
+=======
+    val verified: Boolean = false,
+    @SerialName("global_name")
+val globalName: String? = null
+>>>>>>> dev:domain/src/main/java/com/my/kizzy/domain/model/user/User.kt
 ) {
     fun getAvatarImage(): String {
         return if (avatar?.startsWith("a_") == true)
@@ -61,11 +67,4 @@ data class User(
     }
 }
 
-@Serializable
-data class Badge(
-    @SerialName("icon")
-    val icon: String,
-    @SerialName("name")
-    val name: String
-)
-const val DISCORD_CDN = "https://cdn.discordapp.com"
+private const val DISCORD_CDN = "https://cdn.discordapp.com"

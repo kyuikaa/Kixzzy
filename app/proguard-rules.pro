@@ -4,6 +4,12 @@
 -dontwarn org.bouncycastle.**
 -dontwarn org.openjsse.**
 
+<<<<<<< HEAD
+=======
+# Ktor Rules
+-keepclassmembers class io.ktor.http.** { *; }
+
+>>>>>>> dev
 # Keep Domain data classes
 -keep class com.my.kizzy.domain.model.** { <fields>; }
 
@@ -18,3 +24,5 @@
 
 # some unknown error
 -dontwarn java.lang.invoke.StringConcatFactory
+
+-dontwarn com.my.kizzy.resources.R$drawable

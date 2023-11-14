@@ -30,7 +30,8 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.my.kizzy.data.rpc.Constants.MAX_ALLOWED_CHARACTER_LENGTH
-import com.my.kizzy.domain.model.User
+import com.my.kizzy.data.utils.uriToFile
+import com.my.kizzy.domain.model.user.User
 import com.my.kizzy.feature_custom_rpc.components.BottomSheet
 import com.my.kizzy.feature_custom_rpc.components.DateTimePickerDialog
 import com.my.kizzy.feature_custom_rpc.components.ImagePicker
@@ -39,6 +40,7 @@ import com.my.kizzy.feature_custom_rpc.components.sheet.LoadConfig
 import com.my.kizzy.feature_custom_rpc.components.sheet.PreviewDialog
 import com.my.kizzy.feature_custom_rpc.components.sheet.RequestStoragePermissionDialog
 import com.my.kizzy.feature_custom_rpc.components.sheet.SaveConfigDialog
+import com.my.kizzy.feature_custom_rpc.components.sheet.ShareConfig
 import com.my.kizzy.feature_custom_rpc.components.sheet.dataToString
 import com.my.kizzy.feature_rpc_base.AppUtils
 import com.my.kizzy.feature_rpc_base.services.AppDetectionService
@@ -53,7 +55,10 @@ import com.my.kizzy.ui.components.SwitchBar
 import kotlinx.coroutines.launch
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
+<<<<<<< HEAD
 import java.util.*
+=======
+>>>>>>> dev
 
 @Composable
 fun CustomRPC(
@@ -81,6 +86,13 @@ fun CustomRPC(
             },
             onConfigSelected = {
                 onEvent(UiEvent.SetFieldsFromConfig(it))
+            }
+        )
+    }
+    if (state.showShareDialog) {
+        ShareConfig(
+            onDismiss = {
+                onEvent(UiEvent.SheetEvent.TriggerShareDialog)
             }
         )
     }
@@ -245,6 +257,7 @@ private fun RpcTextFieldsColumn(
                     content = {
                         if (uiState.showStartTimeStampsPickerDialog) {
                             DateTimePickerDialog(
+                                selectedDate = timestampsStart.toLongOrNull(),
                                 onDismiss = { onEvent(UiEvent.TriggerStartTimeStampsDialog) }
                             ) {
                                 onEvent(
@@ -275,6 +288,7 @@ private fun RpcTextFieldsColumn(
                     content = {
                         if (uiState.showStopTimeStampsPickerDialog) {
                             DateTimePickerDialog(
+                                selectedDate = timestampsStop.toLongOrNull(),
                                 onDismiss = { onEvent(UiEvent.TriggerStopTimeStampsDialog) }
                             ) {
                                 onEvent(
@@ -364,7 +378,7 @@ private fun RpcTextFieldsColumn(
                             showProgress = showProgress
                         ) { uri ->
                             showProgress = true
-                            onEvent(UiEvent.UploadImage(uri) { result ->
+                            onEvent(UiEvent.UploadImage(context.uriToFile(uri)) { result ->
                                 showProgress = false
                                 openPickerDialog = false
                                 onEvent(UiEvent.SetFieldsFromConfig(uiState.rpcConfig.copy(largeImg = result)))
@@ -407,7 +421,7 @@ private fun RpcTextFieldsColumn(
                             showProgress = showProgress
                         ) { uri ->
                             showProgress = true
-                            onEvent(UiEvent.UploadImage(uri) { result ->
+                            onEvent(UiEvent.UploadImage(context.uriToFile(uri)) { result ->
                                 showProgress = false
                                 openPickerDialog = false
                                 onEvent(UiEvent.SetFieldsFromConfig(uiState.rpcConfig.copy(smallImg = result)))

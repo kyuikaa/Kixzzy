@@ -2,7 +2,7 @@
  *
  *  ******************************************************************
  *  *  * Copyright (C) 2022
- *  *  * DataModule.kt is part of Kizzy
+ *  *  * AppModule.kt is part of Kizzy
  *  *  *  and can not be copied and/or distributed without the express
  *  *  * permission of yzziK(Vaibhav)
  *  *  *****************************************************************
@@ -10,8 +10,9 @@
  *
  */
 
-package com.my.kizzy.data
+package com.my.kizzy.data.di
 
+import com.my.kizzy.data.BuildConfig
 import com.my.kizzy.data.remote.ApiService
 import com.my.kizzy.data.remote.Base
 import com.my.kizzy.data.remote.Discord
@@ -29,13 +30,14 @@ import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.plugins.logging.LogLevel
 import io.ktor.client.plugins.logging.Logger
 import io.ktor.client.plugins.logging.Logging
+import io.ktor.http.HttpHeaders
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object DataModule {
+object AppModule {
     @Provides
     @Singleton
     @Base
@@ -73,6 +75,7 @@ object DataModule {
             }
             install(Logging) {
                 level = LogLevel.HEADERS
+                sanitizeHeader { header -> header == HttpHeaders.Authorization }
                 logger = object : Logger {
                     override fun log(message: String) {
                         kLogger.d("Ktor", message)
@@ -81,7 +84,6 @@ object DataModule {
             }
         }
     }
-
 
     @Provides
     fun providesKizzyRepository(

@@ -12,6 +12,11 @@
 
 package com.my.kizzy.preference
 
+<<<<<<< HEAD
+=======
+import com.my.kizzy.domain.model.release.Release
+import com.my.kizzy.domain.model.user.User
+>>>>>>> dev
 import com.tencent.mmkv.MMKV
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
@@ -62,6 +67,29 @@ object Prefs {
             enabledPackages.add(pkg)
 
         set(ENABLED_APPS, Json.encodeToString(enabledPackages))
+<<<<<<< HEAD
+=======
+    }
+
+    fun getUser(): User? {
+        val userJson = get(USER_DATA,"")
+        return when {
+            userJson.isNotEmpty() -> Json.decodeFromString(userJson)
+            else -> null
+        }
+    }
+
+    fun getSavedLatestRelease() : Release? {
+        val json = get(LATEST_RELEASE, "")
+        return when {
+            json.isNotEmpty() -> Json.decodeFromString(json)
+            else -> null
+        }
+    }
+
+    fun saveLatestRelease(release: Release) {
+        set(LATEST_RELEASE, Json.encodeToString(release))
+>>>>>>> dev
     }
     //User Preferences
     const val USER_DATA = "user" //Json Data Referencing User_Data class
@@ -102,4 +130,7 @@ object Prefs {
     const val PALETTE_STYLE = "palette_style"
 
     const val APPLY_FIELDS_FROM_LAST_RUN_RPC = "enable_setting_from_last_config"
+    const val CUSTOM_ACTIVITY_STATUS = "custom_activity_status"
+
+    const val LATEST_RELEASE = "latest_release"
 }
