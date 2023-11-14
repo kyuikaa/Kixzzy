@@ -54,8 +54,10 @@ const val materialColor = "https://github.com/material-foundation/material-color
 const val nintendoRepo = "https://github.com/ninstar/Rich-Presence-U"
 const val XboxRpc = "https://github.com/MrCoolAndroid/Xbox-Rich-Presence-Discord"
 const val monet = "https://github.com/Kyant0/Monet"
+const val mika = "https://rin4ever.xyz"
 
 val creditsList = listOf(
+    Credit("mikaavllhzew", Modders, mika),
     Credit("Read You", GPL_V3, readYou),
     Credit("Seal", GPL_V3, seal),
     Credit("material-color-utilities", APACHE_V2, materialColor),
