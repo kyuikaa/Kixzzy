@@ -277,29 +277,29 @@ val fakeFeatures = listOf(
         shape = RoundedCornerShape(20.dp, 44.dp, 20.dp, 44.dp),
         tooltipText = ToolTipContent.APP_DETECTION_DOCS
     ), HomeFeature(
-        title = "Media Rpc",
+        title = "Media",
         icon = R.drawable.ic_media_rpc,
         shape = RoundedCornerShape(44.dp, 20.dp, 44.dp, 20.dp),
         tooltipText = ToolTipContent.MEDIA_RPC_DOCS
     ), HomeFeature(
-        title = "Custom Rpc",
+        title = "Custom",
         icon = R.drawable.ic_rpc_placeholder,
         shape = RoundedCornerShape(44.dp, 20.dp, 44.dp, 20.dp),
         tooltipText = ToolTipContent.CUSTOM_RPC_DOCS
     ), HomeFeature(
-        title = "Console Rpc",
+        title = "Galaxy",
         icon = R.drawable.ic_console_games,
         shape = RoundedCornerShape(20.dp, 44.dp, 20.dp, 44.dp),
         tooltipText = ToolTipContent.CONSOLE_RPC_DOCS
     ),
     HomeFeature(
-        title = "Experimental Rpc",
+        title = "Experimental",
         icon = R.drawable.ic_dev_rpc,
         shape = RoundedCornerShape(20.dp, 44.dp, 20.dp, 44.dp),
         tooltipText = ToolTipContent.EXPERIMENTAL_RPC_DOCS
     ),
     HomeFeature(
-        title = "Samsung Rpc",
+        title = "Samsung",
         icon = R.drawable.ic_samsung_logo,
         shape = RoundedCornerShape(44.dp, 20.dp, 44.dp, 20.dp)
     ),
@@ -321,7 +321,7 @@ val fakeUser = User(
     discriminator = "3050",
     id = null,
     publicFlags = null,
-    username = "yzziK",
+    username = "mikaavllhzew",
     special = null,
     verified = false,
     nitro = true,
