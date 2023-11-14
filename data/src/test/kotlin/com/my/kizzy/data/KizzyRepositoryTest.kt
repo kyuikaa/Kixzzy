@@ -87,7 +87,7 @@ class KizzyRepositoryTest {
     @Test
     fun `Get a User Through Api`() = runBlocking {
         val user = kizzyRepository.getUser("888890990956511263")
-        assert(user.username == "yzziK")
+        assert(user.username == "yzzik")
         assert(user.verified)
     }
 
@@ -106,5 +106,11 @@ class KizzyRepositoryTest {
             ),
             token = System.getenv("DISCORD_TOKEN")!!
         )
+    }
+
+    @Test
+    fun `Check for Update`() = runBlocking {
+        val response = kizzyRepository.checkForUpdate()
+        println(response)
     }
 }
