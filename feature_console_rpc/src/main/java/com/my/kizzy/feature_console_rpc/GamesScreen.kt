@@ -91,7 +91,7 @@ fun GamesScreen(
                     }
                     else {
                         Text(
-                            text = "Console Rpc",
+                            text = "Galaxy Presence",
                             style = MaterialTheme.typography.headlineLarge,
                         )
                     }
