@@ -47,6 +47,7 @@ data class Credit(val title: String = "", val license: String = "", val url: Str
 const val GPL_V3 = "GNU General Public License v3.0"
 const val APACHE_V2 = "Apache License, Version 2.0"
 const val MIT = "MIT License"
+const val MOD = "Main Modder"
 
 const val readYou = "https://github.com/Ashinch/ReadYou"
 const val seal = "https://github.com/JunkFood02/Seal"
@@ -57,7 +58,7 @@ const val monet = "https://github.com/Kyant0/Monet"
 const val mika = "https://rin4ever.xyz"
 
 val creditsList = listOf(
-    Credit("mikaavllhzew", Modders, mika),
+    Credit("mikaavllhzew", MOD, mika),
     Credit("Read You", GPL_V3, readYou),
     Credit("Seal", GPL_V3, seal),
     Credit("material-color-utilities", APACHE_V2, materialColor),
