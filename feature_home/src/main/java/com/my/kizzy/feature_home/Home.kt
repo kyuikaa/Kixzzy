@@ -274,39 +274,39 @@ val fakeFeatures = listOf(
     HomeFeature(
         title = "App Detection",
         icon = R.drawable.ic_apps,
-        shape = RoundedCornerShape(20.dp, 44.dp, 20.dp, 44.dp),
+        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
         tooltipText = ToolTipContent.APP_DETECTION_DOCS
     ), HomeFeature(
         title = "Media",
         icon = R.drawable.ic_media_rpc,
-        shape = RoundedCornerShape(44.dp, 20.dp, 44.dp, 20.dp),
+        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
         tooltipText = ToolTipContent.MEDIA_RPC_DOCS
     ), HomeFeature(
         title = "Custom",
         icon = R.drawable.ic_rpc_placeholder,
-        shape = RoundedCornerShape(44.dp, 20.dp, 44.dp, 20.dp),
+        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
         tooltipText = ToolTipContent.CUSTOM_RPC_DOCS
     ), HomeFeature(
         title = "Galaxy",
         icon = R.drawable.ic_console_games,
-        shape = RoundedCornerShape(20.dp, 44.dp, 20.dp, 44.dp),
+        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
         tooltipText = ToolTipContent.CONSOLE_RPC_DOCS
     ),
     HomeFeature(
         title = "Experimental",
         icon = R.drawable.ic_dev_rpc,
-        shape = RoundedCornerShape(20.dp, 44.dp, 20.dp, 44.dp),
+        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
         tooltipText = ToolTipContent.EXPERIMENTAL_RPC_DOCS
     ),
     HomeFeature(
         title = "Samsung",
         icon = R.drawable.ic_samsung_logo,
-        shape = RoundedCornerShape(44.dp, 20.dp, 44.dp, 20.dp)
+        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp)
     ),
     HomeFeature(
         title = "Coming Soon",
         icon = R.drawable.ic_info,
-        shape = RoundedCornerShape(20.dp, 44.dp, 20.dp, 44.dp),
+        shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
         showSwitch = false
     )
 )
