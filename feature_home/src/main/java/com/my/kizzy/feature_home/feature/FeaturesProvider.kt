@@ -109,7 +109,7 @@ fun homeFeaturesProvider(
             tooltipText = ToolTipContent.CUSTOM_RPC_DOCS,
             featureDocsLink = ToolTipContent.CUSTOM_RPC_DOCS_LINK
         ), HomeFeature(
-            title = "Galaxy",
+            title = "Preset",
             icon = R.drawable.ic_console_games,
             route = Routes.CONSOLE_RPC,
             isChecked = AppUtils.customRpcRunning(),
