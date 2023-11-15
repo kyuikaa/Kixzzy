@@ -60,7 +60,7 @@ fun MediaRPC(onBackPressed: () -> Unit) {
             LargeTopAppBar(
                 title = {
                     Text(
-                        text = "Media Rpc",
+                        text = "Media Rich Presence",
                         style = MaterialTheme.typography.headlineLarge,
                     )
                 },
