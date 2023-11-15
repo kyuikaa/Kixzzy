@@ -74,27 +74,22 @@ class GamesViewModel @Inject constructor(
         }
     }
 
-    private fun onSearch(query: String, platform: String) {
-    searchJob?.cancel()
-    searchJob = viewModelScope.launch {
-        delay(500)
-        searchForGame(query, platform)
-      }
-  }
+    private fun onSearch(query: String) {
+        searchJob?.cancel()
+        searchJob = viewModelScope.launch {
+            delay(500)
+            searchForGame(query)
+        }
+    }
 
-
-    private fun searchForGame(query: String, platform: String) {
-    if (query == "" && platform == "") {
+    private fun searchForGame(query: String) = if (query == "")
         _state.value = GamesState.Success(games = games)
-    } else {
+    else {
         val newList = games.filter {
-            it.game_title.contains(query, ignoreCase = true) &&
-            it.platform.contains(platform, ignoreCase = true)
+            it.game_title.contains(query, ignoreCase = true)
         }
         _state.value = GamesState.Success(games = newList)
     }
-   }
-
 }
 
 
