@@ -14,12 +14,12 @@ package com.my.kizzy.data.rpc
 
 object Constants {
     const val NINTENDO_LINK =
-        "https://media.discordapp.net/attachments/1168719076760240188/1173423741930311710/retouch_1699836357027.PNG"
+        ""
     const val WII_U_LINK =
-        "https://media.discordapp.net/attachments/1168719076760240188/1173423741930311710/retouch_1699836357027.PNG"
+        ""
     const val XBOX_LINK =
-        "https://media.discordapp.net/attachments/1009061802593763398/1049675792952598599/1670332610733.png"
-    const val N3DS_LINK = "https://media.discordapp.net/attachments/1168719076760240188/1173423741930311710/retouch_1699836357027.PNG"
+        ""
+    const val N3DS_LINK = ""
     const val NINTENDO = "Galaxy Launcher"
     const val NINTENDO_3DS = "Galaxy Launcher"
     const val WII_U = "Galaxy Launcher"
