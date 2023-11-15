@@ -91,7 +91,7 @@ fun GamesScreen(
                     }
                     else {
                         Text(
-                            text = "Galaxy Presence",
+                            text = "Choose Preset",
                             style = MaterialTheme.typography.headlineLarge,
                         )
                     }
