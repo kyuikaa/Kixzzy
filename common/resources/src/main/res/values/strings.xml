@@ -22,6 +22,10 @@
     <string name="preview_rpc">Preview Rich Presence</string>
     <string name="select_a_config">Select a config</string>
     <string name="login_with_discord">Login With Discord</string>
+    <string name="mod">mikaavllhze</string>
+    <string name="mod_desc">Modders</sttring>
+    <string name="mod_repo">Repository Mods</string>
+    <string name="mod_repo_desc">Check the repository of mods</string>
     <string name="github_readme">README</string>
     <string name="github_readme_desc">Check the Github repository</string>
     <string name="github_latest_release">"Latest release "</string>
