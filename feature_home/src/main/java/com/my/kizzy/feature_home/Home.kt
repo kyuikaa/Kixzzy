@@ -287,7 +287,7 @@ val fakeFeatures = listOf(
         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
         tooltipText = ToolTipContent.CUSTOM_RPC_DOCS
     ), HomeFeature(
-        title = "Galaxy",
+        title = "Preset",
         icon = R.drawable.ic_console_games,
         shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
         tooltipText = ToolTipContent.CONSOLE_RPC_DOCS
