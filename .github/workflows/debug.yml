@@ -1,11 +1,11 @@
-name: Build Debug Apk
+name: Android CI Build Debug
 
 on: 
   workflow_dispatch:
 
 jobs:
   build:
-    name: Build Apk
+    name: Android CI Debug APK
     runs-on: ubuntu-latest
     steps:
       - name: Cancel previous runs
