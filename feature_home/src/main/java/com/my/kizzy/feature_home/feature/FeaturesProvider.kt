@@ -56,7 +56,7 @@ fun homeFeaturesProvider(
                 } else
                     ctx.stopService(Intent(ctx, AppDetectionService::class.java))
             },
-            shape = RoundedCornerShape(20.dp, 44.dp, 20.dp, 44.dp),
+            shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
             tooltipText = ToolTipContent.APP_DETECTION_DOCS,
             featureDocsLink = ToolTipContent.APP_DETECTION_DOCS_LINK
         ), HomeFeature(
@@ -78,7 +78,7 @@ fun homeFeaturesProvider(
                 } else
                     ctx.stopService(Intent(ctx, MediaRpcService::class.java))
             },
-            shape = RoundedCornerShape(44.dp, 20.dp, 44.dp, 20.dp),
+            shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
             tooltipText = ToolTipContent.MEDIA_RPC_DOCS,
             featureDocsLink = ToolTipContent.MEDIA_RPC_DOCS_LINK
         ), HomeFeature(
@@ -104,7 +104,7 @@ fun homeFeaturesProvider(
                 } else
                     ctx.stopService(Intent(ctx, CustomRpcService::class.java))
             },
-            shape = RoundedCornerShape(44.dp, 20.dp, 44.dp, 20.dp),
+            shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
             showSwitch = Prefs[Prefs.LAST_RUN_CUSTOM_RPC, ""].isNotEmpty(),
             tooltipText = ToolTipContent.CUSTOM_RPC_DOCS,
             featureDocsLink = ToolTipContent.CUSTOM_RPC_DOCS_LINK
@@ -131,7 +131,7 @@ fun homeFeaturesProvider(
                 } else
                     ctx.stopService(Intent(ctx, CustomRpcService::class.java))
             },
-            shape = RoundedCornerShape(20.dp, 44.dp, 20.dp, 44.dp),
+            shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
             showSwitch = Prefs[Prefs.LAST_RUN_CONSOLE_RPC, ""].isNotEmpty(),
             tooltipText = ToolTipContent.CONSOLE_RPC_DOCS,
             featureDocsLink = ToolTipContent.CONSOLE_RPC_DOCS_LINK
@@ -150,7 +150,7 @@ fun homeFeaturesProvider(
                 } else
                     ctx.stopService(Intent(ctx, ExperimentalRpc::class.java))
             },
-            shape = RoundedCornerShape(20.dp, 44.dp, 20.dp, 44.dp),
+            shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
             showSwitch = hasUsageAccess.value && hasNotificationAccess.value && userVerified,
             tooltipText = ToolTipContent.EXPERIMENTAL_RPC_DOCS,
             featureDocsLink = ToolTipContent.EXPERIMENTAL_RPC_DOCS_LINK
@@ -169,13 +169,13 @@ fun homeFeaturesProvider(
                 } else
                     ctx.stopService(Intent(ctx, SamsungRpcService::class.java))
             },
-            shape = RoundedCornerShape(44.dp, 20.dp, 44.dp, 20.dp),
+            shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
             showSwitch = hasUsageAccess.value && userVerified
         ),
         HomeFeature(
             title = "Coming Soon",
             icon = R.drawable.ic_info,
-            shape = RoundedCornerShape(20.dp, 44.dp, 20.dp, 44.dp),
+            shape = RoundedCornerShape(20.dp, 20.dp, 20.dp, 20.dp),
             showSwitch = false
         )
     )
