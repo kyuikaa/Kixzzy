@@ -32,9 +32,11 @@ import com.my.kizzy.feature_about.BuildConfig
 
 
 const val github_Repository = "https://github.com/dead8309/Kizzy"
+const val github_RepositoryMod = "https://github.com/mikaaamoe/Kixzzy"
 const val github_Release = "$github_Repository/releases"
 const val github_Issues = "$github_Repository/issues/new"
 const val github_privacy_policy = "$github_Repository/blob//master/TERMS_OF_SERVICE.md"
+const val mod_url = "https://rin4ever.xyz"
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -70,6 +72,15 @@ fun About(
                     icon = Icons.Outlined.PrivacyTip
                 ) {
                     uriHandler.openUri(github_privacy_policy)
+                }
+            }
+            item {
+                PreferencesHint(
+                    title = stringResource(id = R.string.mod_repo),
+                    description = stringResource(id = R.string.mod_repo_desc),
+                    icon = Icons.Outlined.NewReleases
+                ) {
+                    uriHandler.openUri(github_RepositoryMod)
                 }
             }
             item {
@@ -114,6 +125,15 @@ fun About(
                     description = BuildConfig.VERSION_NAME,
                     icon = Icons.Outlined.Info
                 ) {
+                }
+            }
+            item {
+                SettingItem(
+                    title = stringResource(id = R.string.mod),
+                    description = stringResource(id = R.string.mod_desc),
+                    icon = Icons.Outlined.AutoAwesome
+                ) {
+                    openUrl(mod_url)
                 }
             }
         }
