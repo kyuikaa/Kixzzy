@@ -219,6 +219,7 @@ open class DiscordWebSocketImpl(
         runBlocking {
             websocket?.close()
             logger.e("Gateway","Connection to gateway closed")
+            logger.d("Gateway", "Reconnecting....")
             delay(200.milliseconds)
             connect()
         }
