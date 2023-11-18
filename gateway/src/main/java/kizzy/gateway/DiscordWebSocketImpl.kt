@@ -22,7 +22,6 @@ import kotlinx.serialization.json.decodeFromJsonElement
 import kotlinx.serialization.json.encodeToJsonElement
 import kotlin.coroutines.CoroutineContext
 import kotlin.time.Duration.Companion.milliseconds
-import kotlin.time.Duration.Companion.seconds
 
 open class DiscordWebSocketImpl(
     private val token: String,
@@ -80,9 +79,6 @@ open class DiscordWebSocketImpl(
         logger.w("Gateway","Closed with code: ${close?.code}, " +
                 "reason: ${close?.message}, " +
                 "can_reconnect: ${close?.code?.toInt() == 4000}")
-        logger.d("Gateway", "Reconnecting....")
-        delay(700.milliseconds)
-            connect()
         if (close?.code?.toInt() == 4000) {
             delay(200.milliseconds)
             connect()
@@ -127,7 +123,7 @@ open class DiscordWebSocketImpl(
     private suspend inline fun handleInvalidSession() {
         logger.i("Gateway","Handling Invalid Session")
         logger.d("Gateway","Sending Identify after 150ms")
-        delay(300)
+        delay(150)
         sendIdentify()
     }
 
@@ -220,8 +216,6 @@ open class DiscordWebSocketImpl(
         runBlocking {
             websocket?.close()
             logger.e("Gateway","Connection to gateway closed")
-            logger.d("Gateway", "Reconnecting....")
-            connect()
         }
     }
 
