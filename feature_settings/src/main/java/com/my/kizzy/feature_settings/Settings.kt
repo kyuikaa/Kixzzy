@@ -144,6 +144,14 @@ fun SettingsDrawer(
                     }
                 }
                 item {
+                    SettingsItemCard(
+                        title = "Modded by mv.machine",    
+                        icon = ImageVector.vectorResource(id = R.drawable.ic_discord)
+                    ) {
+                        uriHandler.openUri("https://link.rin4ever.xyz/discord")
+                    }
+                }
+                item {
                     RequestQsTile(
                         visible = showKizzyQuickieRequestItem,
                         componentName = componentName
