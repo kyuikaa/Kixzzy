@@ -221,7 +221,7 @@ open class DiscordWebSocketImpl(
             websocket?.close()
             logger.e("Gateway","Connection to gateway closed")
             logger.d("Gateway", "Reconnecting....")
-            delay(3000.miliseconds)
+            delay(3000.milliseconds)
             connect()
         }
     }
