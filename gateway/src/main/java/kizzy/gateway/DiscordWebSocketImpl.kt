@@ -79,6 +79,9 @@ open class DiscordWebSocketImpl(
         logger.w("Gateway","Closed with code: ${close?.code}, " +
                 "reason: ${close?.message}, " +
                 "can_reconnect: ${close?.code?.toInt() == 4000}")
+        logger.d("Gateway", "Reconnecting....")
+        delay(200.milliseconds)
+            connect()
         if (close?.code?.toInt() == 4000) {
             delay(200.milliseconds)
             connect()
