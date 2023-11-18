@@ -80,7 +80,7 @@ open class DiscordWebSocketImpl(
                 "reason: ${close?.message}, " +
                 "can_reconnect: ${close?.code?.toInt() == 4000}")
         logger.d("Gateway", "Reconnecting....")
-        delay(200.milliseconds)
+        delay(4000.seconds)
             connect()
         if (close?.code?.toInt() == 4000) {
             delay(200.milliseconds)
@@ -220,7 +220,7 @@ open class DiscordWebSocketImpl(
             websocket?.close()
             logger.e("Gateway","Connection to gateway closed")
             logger.d("Gateway", "Reconnecting....")
-            delay(200.milliseconds)
+            delay(4000.seconds)
             connect()
         }
     }
