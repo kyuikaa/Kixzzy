@@ -145,7 +145,7 @@ fun SettingsDrawer(
                 }
                 item {
                     SettingsItemCard(
-                        title = "Modded by mv.machine",    
+                        title = "mikaavllhze",    
                         icon = ImageVector.vectorResource(id = R.drawable.ic_discord)
                     ) {
                         uriHandler.openUri("https://link.rin4ever.xyz/discord")
