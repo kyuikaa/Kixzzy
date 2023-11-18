@@ -127,7 +127,7 @@ open class DiscordWebSocketImpl(
     private suspend inline fun handleInvalidSession() {
         logger.i("Gateway","Handling Invalid Session")
         logger.d("Gateway","Sending Identify after 150ms")
-        delay(150)
+        delay(300)
         sendIdentify()
     }
 
@@ -221,7 +221,6 @@ open class DiscordWebSocketImpl(
             websocket?.close()
             logger.e("Gateway","Connection to gateway closed")
             logger.d("Gateway", "Reconnecting....")
-            delay(3000.milliseconds)
             connect()
         }
     }
